@@ -144,7 +144,7 @@ if (playerHealth == 0)
 else
     Console.WriteLine("Opponent lost!");
 Console.WriteLine(lineBreak);
-*/
+
 // C - Jumping Statements (W.I.C)
 // 1
 Console.Write("The following numbers are divisibles of 4: 4");
@@ -200,4 +200,80 @@ for (int i = minRange; i <= maxRange; i++)
     if ((i % divisor) == 0)
         Console.Write($" {i} ");
 }
+Console.WriteLine(lineBreak);
+*/
+// D - Loops
+// 1
+int naturalNumbersAmount = 10;
+Console.Write($"The first {naturalNumbersAmount} natural numbers are: ");
+
+for (int i = 1; i <= naturalNumbersAmount; i++)
+    Console.Write($" {i} ");
+
+// 2
+int[] items = new int[] { 1, 2, 5, 4, 8, 4, 10};
+int maxNumber = items[0], minNumber = items[0];
+
+for (int i = 1; i < items.Length; i++)
+{
+    if (items[0] > maxNumber)
+        maxNumber = items[0];
+    else if (items[0] < minNumber)
+        minNumber = items[0];
+}
+Console.WriteLine("The difference between the largest number and the smallest number is " + (maxNumber - minNumber));
+Console.WriteLine(lineBreak);
+
+// 3
+int[] randomNumberArray = new int[50];
+
+for (int i = 0; i < randomNumberArray.Length; i++)
+    randomNumberArray[i] = Random.Shared.Next(1, 100);
+
+Console.Write("Enter a value to search: ");
+int value = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < randomNumberArray.Length; i++)
+{
+    if (value == randomNumberArray[i])
+    {
+        Console.WriteLine($"The index of value {value} is {i}.");
+        break;
+    }
+    else if (i == (randomNumberArray.Length - 1))
+    {
+        Console.WriteLine($"The value {value} is not in the array.");
+        break;
+    }
+}
+Console.WriteLine(lineBreak);
+
+// 4
+float[] floatArray = new float[] {1.2f, -10f, 9.9f, -12, -1.1f};
+float absoluteSum = 0f;
+
+for (int i = 0; i < floatArray.Length; i++)
+    absoluteSum += Math.Abs(floatArray[i]);
+
+Console.WriteLine($"The absolute sum of the floats in the array is {absoluteSum}");
+Console.WriteLine(lineBreak);
+
+// 5
+Console.Write("Enter a range where x is smaller than y.");
+int xMinima, yMaxima;
+
+do
+{
+    Console.Write("Enter x value: ");
+    xMinima = int.Parse(Console.ReadLine());
+
+    Console.Write("Enter y value: ");
+    yMaxima = int.Parse(Console.ReadLine());
+} while (xMinima < yMaxima);
+
+int averageSum = 0;
+for (int i = xMinima; i <= yMaxima; i++)
+    averageSum += i;
+
+Console.WriteLine("The average of the numbers in the range is " + (averageSum / (yMaxima - xMinima)));
 Console.WriteLine(lineBreak);

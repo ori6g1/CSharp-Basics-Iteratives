@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 string input;
 string lineBreak = "\r\n";
 string messageStart, messageMiddle, messageEnd;
-
+/*
 // A - Arrays (W.I.C)
 // 1
 int[] numberArray =  new int[] {0, 1, 2, 3, 4};
@@ -143,4 +143,61 @@ if (playerHealth == 0)
     Console.WriteLine("You lost!");
 else
     Console.WriteLine("Opponent lost!");
+Console.WriteLine(lineBreak);
+*/
+// C - Jumping Statements (W.I.C)
+// 1
+Console.Write("The following numbers are divisibles of 4: 4");
+
+for (int i = 5; i <= 100; i++)
+{
+    if ((i % 4) == 0)
+        Console.Write($", {i}");
+}
+Console.WriteLine(lineBreak);
+
+// 2
+int numberToGuess = 7, guessAmount = 1;
+Console.Write("Guess the number I am thinking of between 1-10: ");
+input = Console.ReadLine();
+
+while (int.Parse(input) != numberToGuess)
+{
+    Console.Write("Wrong. Guess again: ");
+    input = Console.ReadLine();
+    guessAmount++;
+}
+Console.WriteLine($"The number I was thinking of is {numberToGuess} and it took you {guessAmount} guesses.");
+Console.WriteLine(lineBreak);
+
+// 3
+Console.Write("Enter the minimum number to check: ");
+int minRange = int.Parse(Console.ReadLine());
+Console.Write("Enter the maximum number to check: ");
+int maxRange = int.Parse(Console.ReadLine());
+
+Console.Write("The following numbers are divisibles of 4: ");
+
+for (int i = minRange; i <= maxRange; i++)
+{
+    if ((i % 4) == 0)
+        Console.Write($" {i} ");
+}
+Console.WriteLine(lineBreak);
+
+// 4
+Console.Write("Enter the divisor to check: ");
+int divisor = int.Parse(Console.ReadLine());
+Console.Write("Enter the minimum number to check: ");
+minRange = int.Parse(Console.ReadLine());
+Console.Write("Enter the maximum number to check: ");
+maxRange = int.Parse(Console.ReadLine());
+
+Console.Write($"The following numbers are divisibles of {divisor}: ");
+
+for (int i = minRange; i <= maxRange; i++)
+{
+    if ((i % divisor) == 0)
+        Console.Write($" {i} ");
+}
 Console.WriteLine(lineBreak);

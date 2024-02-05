@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 string input;
 string lineBreak = "\r\n";
 string messageStart, messageMiddle, messageEnd;
-/*
+
 // A - Arrays (W.I.C)
 // 1
 int[] numberArray =  new int[] {0, 1, 2, 3, 4};
@@ -277,7 +277,7 @@ for (int i = xMinima; i <= yMaxima; i++)
 
 Console.WriteLine("The average of the numbers in the range is " + (averageSum / (yMaxima - xMinima)));
 Console.WriteLine(lineBreak);
-*/
+
 // E - Strings
 // 1
 Console.Write("Enter a sentence to ALLCAPS: ");
@@ -330,3 +330,46 @@ for (int i = 0; i < word.Length; i++)
 if (!isIsogram)
     Console.WriteLine($"The word {word} is not an isogram.");
 Console.WriteLine(lineBreak);
+
+// F - The Blind Hero
+messageStart = "> ";
+Console.WriteLine($"{messageStart}The following commands are available to you: up, down, right, left, status, end");
+
+input = "";
+int[] heroLocation = new int[] { 0, 0 };
+string[] command;
+
+while ( input != "end" )
+{
+    Console.Write(messageStart);
+    input = Console.ReadLine();
+    command = input.Split(" ");
+    
+    switch (command[0])
+    {
+        case "up":
+            if (command.Length > 1)
+                heroLocation[1] += int.Parse(command[1]);
+            break;
+        case "down":
+            if (command.Length > 1)
+                heroLocation[1] -= int.Parse(command[1]);
+            break;
+        case "right":
+            if (command.Length > 1)
+                heroLocation[0] += int.Parse(command[1]);
+            break;
+        case "left":
+            if (command.Length > 1)
+                heroLocation[0] -= int.Parse(command[1]);
+            break;
+        case "status":
+            Console.WriteLine($"{messageStart}({heroLocation[0]}, {heroLocation[1]})");
+            break;
+        case "end":
+            break;
+        default:
+            Console.WriteLine($"{messageStart}There is no such command");
+            break;
+    }
+}

@@ -201,7 +201,7 @@ for (int i = minRange; i <= maxRange; i++)
         Console.Write($" {i} ");
 }
 Console.WriteLine(lineBreak);
-*/
+
 // D - Loops
 // 1
 int naturalNumbersAmount = 10;
@@ -276,4 +276,57 @@ for (int i = xMinima; i <= yMaxima; i++)
     averageSum += i;
 
 Console.WriteLine("The average of the numbers in the range is " + (averageSum / (yMaxima - xMinima)));
+Console.WriteLine(lineBreak);
+*/
+// E - Strings
+// 1
+Console.Write("Enter a sentence to ALLCAPS: ");
+string sentence = Console.ReadLine();
+string capsSentence = "";
+
+for (int i = 0; i < sentence.Length; i++)
+{
+    if (sentence[i] >= 97 && sentence[i] <= 122)
+        capsSentence += (char)(sentence[i] - 32);
+    else
+        capsSentence += sentence[i];
+}
+Console.WriteLine($"The new ALLCAPSED'ed sentence is: {capsSentence}");
+Console.WriteLine(lineBreak);
+
+// 2
+Console.Write("Enter a sentence to sPoNgIfY: ");
+sentence = Console.ReadLine();
+string spongeSentence = "";
+
+for (int i = 0; i < sentence.Length; i++)
+{
+    if (sentence[i] >= 97 && sentence[i] <= 122 && (i % 2) == 0)
+        spongeSentence += (char)(sentence[i] - 32);
+    else
+        spongeSentence += sentence[i];
+}
+Console.WriteLine($"The new spongified sentence is: {spongeSentence}");
+Console.WriteLine(lineBreak);
+
+// 3
+Console.Write("Enter a word to check if it's an isogram: ");
+string word = Console.ReadLine();
+bool isIsogram = false;
+
+for (int i = 0; i < word.Length; i++)
+{
+    for (int j = (i + 1); j < word.Length; j++)
+    {
+        if (word[j] == word[i])
+        {
+            isIsogram = true;
+            Console.WriteLine($"The word {word} is an isogram.");
+            break;
+        }
+    }
+}
+
+if (!isIsogram)
+    Console.WriteLine($"The word {word} is not an isogram.");
 Console.WriteLine(lineBreak);
